@@ -49,7 +49,7 @@ formularioDatosTrabajoAltura.addEventListener("click", function () {
   impresionFormularioTrabajoAltura.protectorRespiratorioAt =
     document.getElementById("protectorRespiratorioAt").checked;
   impresionFormularioTrabajoAltura.protectoresAuditivosAt =
-    document.getElementById("protectoresAuditivosAT").checked;
+    document.getElementById("protectoresAuditivosAt").checked;
   impresionFormularioTrabajoAltura.guantesNitriloAt =
     document.getElementById("guantesNitriloAt").checked;
   impresionFormularioTrabajoAltura.guantesVaquetaAt =
@@ -131,7 +131,7 @@ formularioDatosTrabajoAltura.addEventListener("click", function () {
   impresionFormularioTrabajoAltura.presenciaFuegoAt =
     document.getElementById("presenciaFuegoAt").checked;
   impresionFormularioTrabajoAltura.derramesFugasAt =
-    document.getElementById("derramesFugasAT").checked;
+    document.getElementById("derramesFugasAt").checked;
   impresionFormularioTrabajoAltura.riesgoExplosionAt =
     document.getElementById("riesgoExplosionAt").checked;
   // acordeon 6 Sistemas de Restriccion y Posicionamiento

@@ -1,12 +1,12 @@
 // inicio De codigo firebase
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
-    authDomain: "bd-appconnet.firebaseapp.com",
-    projectId: "bd-appconnet",
-    storageBucket: "bd-appconnet.appspot.com",
-    messagingSenderId: "749439432233",
-    appId: "1:749439432233:web:861541de33ed615b9fce38",
+  apiKey: "AIzaSyCFOE9HABPO98q4CalVCisoVM7TIVo2czI",
+  authDomain: "bd-appconnet.firebaseapp.com",
+  projectId: "bd-appconnet",
+  storageBucket: "bd-appconnet.appspot.com",
+  messagingSenderId: "749439432233",
+  appId: "1:749439432233:web:861541de33ed615b9fce38",
 };
 
 // Initialize Firebase
@@ -15,19 +15,19 @@ const baseDatos = firebase.firestore();
 
 // fin de codigo firebase
 
-const usuarioTA = {
-    nombreTA: "Jean ",
-    apellidoTA: "Valbuena",
-    correoTA: "soporte.tecnico@gmail.com",
-    celularTA: 34132976801,
-    tipoDocumentoTA: "cedula",
-    numeroDocumentoTA: "80927548",
-    cargoTA: "Soldador",
-    conEmeTA: "luisa Valbuena",
-    celInfEmeTA: "3233052419",
-    planillaTA: "link planilla",
-    venPlanillaTA: "05/06/2024",
-    curAlturasTA: "link Curso Alturas",
+let usuarioTA = {
+  nombrePT: "..... ",
+  apellidoTA: "Valbuena",
+  correoTA: "soporte.tecnico@gmail.com",
+  celularTA: 34132976801,
+  tipoDocumentoTA: "cedula",
+  numeroDocumentoTA: "80927548",
+  cargoTA: "Soldador",
+  conEmeTA: "luisa Valbuena",
+  celInfEmeTA: "3233052419",
+  planillaTA: "link planilla",
+  venPlanillaTA: "05/06/2024",
+  curAlturasTA: "link Curso Alturas",
 };
 
 // inicio traer dato
@@ -61,8 +61,22 @@ const usuarioTA = {
 
 //Nombre
 
+// const contenedorNombreTA = document.getElementById("nombreTA");
+// contenedorNombreTA.textContent = usuarioTA.nombreTA;
+
 const contenedorNombreTA = document.getElementById("nombreTA");
-contenedorNombreTA.textContent = usuarioTA.nombreTA;
+
+baseDatos
+  .collection("trabajagorAutorizado")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.id == "73DWhcUxS9E93wyMnbSd") {
+        usuarioTA = doc.data().impresionTrabajadorDatos;
+        contenedorNombreTA.textContent = usuarioTA.nombrePT;
+      }
+    });
+  });
 
 //apellido
 
@@ -87,7 +101,7 @@ contenedorTipoDocumentoTA.textContent = usuarioTA.tipoDocumentoTA;
 // numero documento
 
 const contenedorNumeroDocumentoTA =
-    document.getElementById("numeroDocumentoTA");
+  document.getElementById("numeroDocumentoTA");
 contenedorNumeroDocumentoTA.textContent = usuarioTA.numeroDocumentoTA;
 
 // Cargo
